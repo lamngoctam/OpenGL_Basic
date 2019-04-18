@@ -1,1 +1,1 @@
-# OpenGL_Basic
+# OpenGL_Basic using freeglut.lib
