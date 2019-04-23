@@ -3,10 +3,10 @@ Download freeglut 3.0.0 MSVC Package from https://www.transmissionzero.co.uk/sof
 Create OpenGL project, such as OpenGLIntroduction 
 Extract "freeglut 3.0.0 MSVC Package" to Dependencies folder inside the OpenGl project which is the same root of OpenGLIntroduction.sln
 
-Dependencies -> freeglut -> bin + include + lib
-Inside: bin: Win32(freeglut.dll) + x64(freeglut.dll)
-Inside: include -> GL folder ->  (greeglut.h + greeglut_ext.h + greeglut_std.h + glut.h)
-Inside: lib: Win32(freeglut.lib) + x64(freeglut.lib)
+#Dependencies -> freeglut -> bin + include + lib
+#Inside: bin: Win32(freeglut.dll) + x64(freeglut.dll)
+#Inside: include -> GL folder ->  (greeglut.h + greeglut_ext.h + greeglut_std.h + glut.h)
+#Inside: lib: Win32(freeglut.lib) + x64(freeglut.lib)
 
 For file.h
 •	or C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include
