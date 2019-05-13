@@ -1,6 +1,7 @@
-//############################################################################
-//
-//############################################################################
+//#########################################################
+// Call OpenGLCallBack0(); function from OpenGLWindow.cpp
+//#########################################################
+
 #include "stdafx.h"
 #include "OpenGL.h"
 #include "OpenGLprimitive.h"
@@ -13,16 +14,14 @@ extern OpenGL GLSettings0;
 
 int WinID[2]; //EID
 
-//
-
-void OpenGLDisplay0(void);
+//void OpenGLDisplay0(void);
 void OpenGLCallBack0(void);
 
 //void OpenGLDisplay1(void);
 //void OpenGLCallBack1(void);
 
 /***************************************************/
-/*			OpenGL */
+/*			OpenGL								   */
 /***************************************************/
 void DisplayInit() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -45,7 +44,7 @@ void DisplayPostprocessor() {
 
 
 /***************************************************/
-/*			?OpenGL  */
+/*			OpenGL								   */
 /***************************************************/
 
 void PickUpInit(int x, int y) {
@@ -154,7 +153,7 @@ void OpenGLIdle(void) {
 }
 
 /***************************************************/
-/*			           OpenGL*/
+/*			           OpenGL					   */
 /***************************************************/
 void OpenGLInitialize(int WindowID, OpenGL GLSettings, int InitPosiX, 
 	int InitPosiY, int WindowWidth, int WindowHeight, const char* WindowName) {
@@ -168,7 +167,7 @@ void OpenGLInitialize(int WindowID, OpenGL GLSettings, int InitPosiX,
 }
 
 /***************************************************/
-/*			OpenGL			   */
+/*			OpenGL								   */
 /***************************************************/
 void OpenGLPostprocessor(OpenGL GLSettings) {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -187,7 +186,7 @@ void OpenGLPostprocessor(OpenGL GLSettings) {
 
 
 /***************************************************/
-/*			OpenGL   */
+/*			OpenGL								   */
 /***************************************************/
 void RunOpenGL(int argc, char *argv[]) {
 

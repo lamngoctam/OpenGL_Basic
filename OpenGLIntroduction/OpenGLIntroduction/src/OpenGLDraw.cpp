@@ -104,9 +104,9 @@ void DrawWireOctree(OctVoxel box, int colorID) {
 
 }
 
-/*                                                                */
+/*                                                 */
 /*              Draw Bounding Box                  */
-/*                                                                */
+/*                                                 */
 
 void DrawBoundingbox(CVector3d MaxPt, CVector3d MinPt, int colorID) {
 
