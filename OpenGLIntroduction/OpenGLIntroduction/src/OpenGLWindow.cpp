@@ -68,12 +68,13 @@ void OpenGLDisplay0(void) {
 
 	GLSettings0.SetEyePosition();
 	/********************************/
+	glGetString(GL_VERSION);
 
 	if (ShowAxisFlag)
 		ConclusiveAxis();
 
 	CVector3d MaxPt, MinPt;
-	MaxPt.Set(50.0, 50.0, 50.0);
+	MaxPt.Set(10.0, 10.0, 10.0);
 	MinPt.Set(0.0, 0.0, 0.0);
 
 	if (ShowBB)

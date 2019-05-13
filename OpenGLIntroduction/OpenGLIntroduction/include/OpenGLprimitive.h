@@ -153,14 +153,13 @@ inline void DisableLight(void) {
 }
 
 
-
 //
 inline void DrawString(const char *string, CVector3d V, void *font, GLint alignment) {
 	glRasterPos3d(V.x, V.y, V.z);
 	for (; *string; *string++)
 	{
-		gl2psTextOpt(string, "Times-Roman", 32, alignment, 0.0f);	//GL2PS?p??o??iEPS?p?j
-		glutBitmapCharacter(font, *string);	//OpenGL?p??o??i?E?C???h?E?p?j
+		gl2psTextOpt(string, "Times-Roman", 32, alignment, 0.0f);	//GL2PS-EPS
+		glutBitmapCharacter(font, *string);	//OpenGL
 	}
 }
 
@@ -250,8 +249,6 @@ inline void DrawCone(double r, double h, int n) {
 	DrawCircle(r, n);
 	glPopMatrix();
 }
-
-
 
 
 //
