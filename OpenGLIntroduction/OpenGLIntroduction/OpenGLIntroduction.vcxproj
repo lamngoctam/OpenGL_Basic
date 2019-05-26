@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\freeglut\include; $(SolutionDir)Dependencies\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(SolutionDir)Dependencies\glew-2.1.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\freeglut\include; $(SolutionDir)Dependencies\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(SolutionDir)Dependencies\glew-2.1.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\freeglut\include; $(SolutionDir)Dependencies\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(SolutionDir)Dependencies\glew-2.1.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\freeglut\include; $(SolutionDir)Dependencies\glew-2.1.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\freeglut\lib\$(Platform);$(SolutionDir)Dependencies\glew-2.1.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -106,7 +106,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib; glew32.lib; glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGLIntroduction\include;$(SolutionDir)OpenGLIntroduction\src;$(SolutionDir)OpenGLIntroduction;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -128,7 +128,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib; glew32.lib; glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGLIntroduction\include;$(SolutionDir)OpenGLIntroduction\src;$(SolutionDir)OpenGLIntroduction;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -155,7 +155,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib; glew32.lib; glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGLIntroduction\include;$(SolutionDir)OpenGLIntroduction\src;$(SolutionDir)OpenGLIntroduction;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -181,7 +181,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib; glew32.lib; glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGLIntroduction\include;$(SolutionDir)OpenGLIntroduction\src;$(SolutionDir)OpenGLIntroduction;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -201,6 +201,7 @@
     <ClCompile Include="src\OpenGLDraw.cpp" />
     <ClCompile Include="src\OpenGLWindow.cpp" />
     <ClCompile Include="src\RunOpenGL.cpp" />
+    <ClCompile Include="src\tempDontUse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\vc141.pdb" />

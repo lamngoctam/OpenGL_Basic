@@ -408,8 +408,89 @@ void SpecialKey(int glutKey, int x, int y) {
 	}
 }
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++\\
 
 
+extern CubeNew cubes[4];
+
+int Cuberotation(0);
+int numberCube(0);
+
+void SpecialKeyKorea(unsigned char key, int x, int y) {
+
+	switch (key) {
+	case 'r':
+		Cuberotation += 1;
+		glutPostRedisplay();
+
+		cout << "cuberotation " << Cuberotation << endl;
+
+		break;
+
+	case 't':
+		//cubes[0].setSelected(true);
+		break;
+	}
+}
+void OpenGLIdle_Korea(void) {
+	Cuberotation += 1;
+	glutPostRedisplay();
+}
+
+int theNumberOfStep(0);
+
+void drawModel()
+{
+	CubeNew cb = cubes[numberCube];
+
+	//glEnable(GL_LIGHTING);
+
+	for (int a = 0; a < sizeof(cubes) / sizeof(CubeNew); a++)
+	{
+		if (cubes[a].getSelected())
+		{
+			glPushMatrix();
+			//glTranslatef(cb.getCoordX() + cb.getDirectionX() * (Cuberotation / 100),
+			//	cb.getCoordY() + cb.getDirectionY() * (Cuberotation / 100),
+			//	cb.getCoordZ() + cb.getDirectionZ() * (Cuberotation / 100));
+			//glRotatef(-Cuberotation, -cb.getDirectionZ(), cb.getDirectionY(), cb.getDirectionX());
+			
+			glTranslatef(cb.getCoordX(), cb.getCoordY(), cb.getCoordZ());
+
+			glRotatef(-Cuberotation, -cb.getDirectionX(), cb.getDirectionY(), cb.getDirectionZ());
+			glColor3f(1.5, 0.5, 1.0);glutWireCube(1);
+			glColor3f(0.5, 0.5, 1.0);glutSolidCube(1);
+			glPopMatrix();
+		}
+
+		cout << " ddd" << endl;
+	}
+	if (Cuberotation >= 90)
+	{
+		cubes[numberCube].setSelected(false);
+		numberCube += 1;
+		numberCube %= 4;
+		cubes[numberCube].setSelected(true);
+		Cuberotation = 0;
+
+		cout << " Cuberotation >= 90" << endl;
+	}
+
+}
+
+
+void OpenGLDisplay_rollingcube(void) {
+	DisplayInit();	GradientBackGround(BackTopColor, BackBotColor);		//from OpenGLDraw.cpp
+	GLSettings0.SetEyePosition();
+	glGetString(GL_VERSION);
+
+	if (ShowAxisFlag)
+		ConclusiveAxis();
+	
+	drawModel();
+
+	DisplayPostprocessor();
+}
 
 /***************************************************/
 //
@@ -420,7 +501,9 @@ void OpenGLCallBack0(void) {
 	GLSettings0.PickObject = PickObject0;
 	OpenGLInitialize(0, GLSettings0, 0, 0, 1024, 768, "window");
 
-	glutDisplayFunc(OpenGLDisplay0);
+	//glutDisplayFunc(OpenGLDisplay0);
+	
+	glutDisplayFunc(OpenGLDisplay_rollingcube);
 
 
 	//[AntTweakBar]//
@@ -428,10 +511,15 @@ void OpenGLCallBack0(void) {
 	glutMouseFunc(MouseButton);
 	glutMotionFunc(OnMouseMotion);
 	glutPassiveMotionFunc(PassiveMotion);
-	glutKeyboardFunc(KeyboardFunc);
+	//glutKeyboardFunc(KeyboardFunc);
+	
+	glutKeyboardFunc(SpecialKeyKorea);
+
 	glutSpecialFunc(SpecialKey);
 	glutMouseWheelFunc(OpenGLMouseWheel0);
-	glutIdleFunc(OpenGLIdle);
+	//glutIdleFunc(OpenGLIdle);
+	glutIdleFunc(OpenGLIdle_Korea);
+	
 	TwGLUTModifiersFunc(glutGetModifiers);
 	glutReshapeFunc(OpenGLReshape0);
 
